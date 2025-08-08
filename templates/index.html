@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Optimisation de barres d’acier</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Optimisation de barres d’acier</h1>
+
+  <div class="card">
+    <form method="post">
+      <label>Barre 1 :</label>
+      <select name="bar1">
+        <option>HA6</option><option>HA8</option><option>HA10</option>
+        <option>HA12</option><option>HA14</option><option>HA16</option>
+        <option>HA20</option><option>HA25</option><option>HA32</option><option>HA40</option>
+      </select><br>
+
+      <label>Barre 2 :</label>
+      <select name="bar2">
+        <option>HA6</option><option>HA8</option><option>HA10</option>
+        <option>HA12</option><option>HA14</option><option>HA16</option>
+        <option>HA20</option><option>HA25</option><option>HA32</option><option>HA40</option>
+      </select><br>
+
+      <label>Surface minimale (cm²):</label>
+      <input type="number" name="area" step="0.01" required><br><br>
+
+      <button type="submit" id="btn-calculer">Calculer</button>
+    </form>
+  </div>
+
+  {% if result %}
+    <h2>Résultat :</h2>
+    <div class="result">{{ result }}</div>
+  {% endif %}
+
+  <!-- ✅ Link your JavaScript file after the HTML content -->
+  <script src="cdf.js"></script>
+</body>
+</html>
